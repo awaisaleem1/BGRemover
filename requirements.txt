@@ -1,0 +1,39 @@
+# ============================================
+# VisionClean v3.0 — Dependencies
+# ============================================
+# Install instructions:
+#   pip install -r requirements.txt
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#   pip install craft-text-detector --no-deps
+# ============================================
+
+# --- Core API ---
+fastapi
+uvicorn[standard]
+python-multipart
+
+# --- Image Processing ---
+Pillow
+numpy
+opencv-python-headless
+
+# --- Background Removal (BiRefNet) ---
+rembg
+onnxruntime
+
+# --- Text Detection (CRAFT dependencies) ---
+# NOTE: craft-text-detector itself must be installed separately:
+#   pip install craft-text-detector --no-deps
+# This avoids pulling in an old incompatible opencv version.
+gdown
+scipy
+
+# ============================================
+# MANUAL INSTALL REQUIRED (not in this file):
+# ============================================
+# 1. PyTorch (CPU version):
+#    pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#
+# 2. CRAFT text detector:
+#    pip install craft-text-detector --no-deps
+# ============================================
